@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toy Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .full-image {
+            background-image: url('https://via.placeholder.com/1920x1080/ff7f7f/333333?text=Toy+Shop');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: none;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .toys-section {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .toys-section img {
+            width: 150px;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        .toy {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="full-image">
+    <div class="container">
+        <h1>Welcome to Toy Shop</h1>
+        <input type="text" id="username" placeholder="Enter your username">
+        <button onclick="registerUser()">Register</button>
+        <p>Already have an account? <a href="#" onclick="showToys()">Login</a></p>
+    </div>
+</div>
+
+<div class="toys-section" id="toysSection">
+    <h2>Available Toys</h2>
+    <div class="toy">
+        <img src="https://via.placeholder.com/150" alt="Toy 1">
+        <p>Toy 1</p>
+        <p>Price: ₹500</p>
+    </div>
+    <div class="toy">
+        <img src="https://via.placeholder.com/150" alt="Toy 2">
+        <p>Toy 2</p>
+        <p>Price: ₹700</p>
+    </div>
+    <div class="toy">
+        <img src="https://via.placeholder.com/150" alt="Toy 3">
+        <p>Toy 3</p>
+        <p>Price: ₹600</p>
+    </div>
+</div>
+
+<script>
+    function registerUser() {
+        var username = document.getElementById('username').value;
+        if (username) {
+            alert('Registration successful, welcome ' + username + '!');
+            showToys();
+        } else {
+            alert('Please enter a username!');
+        }
+    }
+
+    function showToys() {
+        document.querySelector('.full-image').style.display = 'none';
+        document.getElementById('toysSection').style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
